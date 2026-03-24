@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyanka | Frontend Developer & Ocean Explorer</title>
+  <meta name="description" content="Portfolio of Priyanka — crafting smooth digital experiences like ocean waves. BCA student passionate about web development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Global Background Video ===== -->
+  <div class="global-video-bg">
+    <video autoplay muted loop playsinline id="bgVideo">
+      <source src="assets/video/project .video.mp4.mp4" type="video/mp4" />
+    </video>
+    <div class="global-video-overlay"></div>
+  </div>
+
+  <!-- ===== Preloader ===== -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-wave">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="preloader-text">Sailing to shore...</p>
+    </div>
+  </div>
+
+  <!-- ===== Custom Cursor ===== -->
+  <div class="cursor-bubble" id="cursorBubble"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===== Ambient Sound Toggle ===== -->
+  <button class="sound-toggle" id="soundToggle" aria-label="Toggle ocean sounds">
+    <i class="fas fa-volume-mute" id="soundIcon"></i>
+  </button>
+  <audio id="oceanSound" loop preload="none">
+    <source src="https://freesound.org/data/previews/467/467006_5674468-lq.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-wave">🌊</span> Priyanka
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link"><i class="fas fa-envelope"></i> My Story</a></li>
+      <li><a href="#projects" class="nav-link"><i class="fas fa-gem"></i> Treasure Chest</a></li>
+      <li><a href="#skills" class="nav-link"><i class="fas fa-umbrella-beach"></i> Beach Gear</a></li>
+      <li><a href="#contact" class="nav-link nav-link--cta"><i class="fas fa-paper-plane"></i> Send a Message</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="hero">
+    <div class="hero-sky">
+      <div class="sun"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="seagull seagull-1">🕊️</div>
+      <div class="seagull seagull-2">🕊️</div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting reveal-up">⚓ Welcome aboard</p>
+        <h1 class="hero-name reveal-up">Priyanka</h1>
+        <p class="hero-tagline reveal-up">
+          <span class="typewriter" id="typewriter"></span><span class="tw-cursor">|</span>
+        </p>
+        <p class="hero-subtitle reveal-up">Crafting smooth digital experiences like ocean waves</p>
+        <div class="hero-buttons reveal-up">
+          <a href="#about" class="btn btn-dive"><i class="fas fa-water"></i> Dive In</a>
+          <a href="#projects" class="btn btn-explore"><i class="fas fa-compass"></i> Explore My Island</a>
+        </div>
+      </div>
+      <div class="hero-profile reveal-up">
+        <div class="hero-profile-frame">
+          <img src="assets/images/profile.jpg.jpeg" alt="Priyanka" />
+          <div class="profile-bubbles">
+            <span class="bubble b1"></span>
+            <span class="bubble b2"></span>
+            <span class="bubble b3"></span>
+            <span class="bubble b4"></span>
+            <span class="bubble b5"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Waves -->
+    <div class="wave-container">
+      <svg class="wave wave-1" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,40 C360,100 720,0 1080,60 C1260,90 1380,50 1440,40 L1440,120 L0,120 Z" />
+      </svg>
+      <svg class="wave wave-2" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C240,10 480,80 720,40 C960,0 1200,70 1440,50 L1440,120 L0,120 Z" />
+      </svg>
+      <svg class="wave wave-3" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,50 C180,80 360,20 540,60 C720,100 900,30 1080,50 C1260,70 1380,40 1440,60 L1440,120 L0,120 Z" />
+      </svg>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll down</span>
+      <div class="scroll-anchor">⚓</div>
+    </div>
+  </section>
+
+  <!-- ===== About Section — My Story ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-icon">📜</span>
+        <h2 class="section-title">My <span>Story</span></h2>
+        <p class="section-subtitle">A postcard from my coding journey</p>
+      </div>
+
+      <div class="about-postcard reveal-up">
+        <div class="postcard-stamp">📮</div>
+        <div class="postcard-content">
+          <div class="postcard-image">
+            <img src="assets/images/profile.jpg.jpeg" alt="Priyanka" />
+          </div>
+          <div class="postcard-text">
+            <h3>Greetings from the Digital Shore! 🏖️</h3>
+            <p>
+              I'm <strong>Priyanka</strong>, a first-year BCA student who fell in love with coding the same way one falls in love with the ocean — slowly, then all at once.
+            </p>
+            <p>
+              My journey started with building simple <strong>HTML web pages</strong> and writing <strong>C programs</strong>. Every line of code I write feels like discovering a new island — full of surprises, challenges, and beauty.
+            </p>
+            <p>
+              When I'm not debugging code, you'll find me dancing 💃, which fuels my creativity and teaches me rhythm — both in life and in code.
+            </p>
+            <div class="postcard-details">
+              <div class="detail-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BCA — 1st Year</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>India</span>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-heart"></i>
+                <span>Code & Dance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strengths as shells -->
+      <div class="strengths-beach reveal-up">
+        <h3 class="strengths-title">🐚 My Pearls of Strength</h3>
+        <div class="shell-grid">
+          <div class="shell-card">
+            <div class="shell-icon">🔍</div>
+            <h4>Debugging Pro</h4>
+            <p>I love finding and fixing bugs — it's like a treasure hunt every time!</p>
+          </div>
+          <div class="shell-card">
+            <div class="shell-icon">📚</div>
+            <h4>Always Learning</h4>
+            <p>Every day is a new wave of knowledge. I ride each one with excitement.</p>
+          </div>
+          <div class="shell-card">
+            <div class="shell-icon">✨</div>
+            <h4>Clean Code</h4>
+            <p>Like smooth sand, I keep my code clean, organized, and efficient.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="section-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,30 C360,70 720,10 1080,40 C1260,55 1380,30 1440,35 L1440,80 L0,80 Z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== Projects Section — Treasure Chest ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-icon">💎</span>
+        <h2 class="section-title">Treasure <span>Chest</span></h2>
+        <p class="section-subtitle">Projects I've crafted on my coding voyage</p>
+      </div>
+
+      <div class="treasure-grid">
+        <!-- Project 1 -->
+        <article class="island-card reveal-up" data-delay="0">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">🧮</span>
+            <div class="island-links">
+              <a href="assets/python-projects/01_calculator.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Smart Calculator</h3>
+          <p>Fully functional calculator with 6 operations — add, subtract, multiply, divide, power, and modulus with error handling.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Functions</span><span>CLI</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Dictionaries, error handling, modular functions
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="island-card reveal-up" data-delay="50">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">🎯</span>
+            <div class="island-links">
+              <a href="assets/python-projects/02_number_guessing.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Number Guessing Game</h3>
+          <p>Guess a random number between 1-100 with hints, attempt tracking, and performance rating after each game.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Random</span><span>Loops</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Random module, while loops, conditional logic
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="island-card reveal-up" data-delay="100">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">🔐</span>
+            <div class="island-links">
+              <a href="assets/python-projects/03_password_generator.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Password Generator</h3>
+          <p>Generate strong, random passwords with customizable length, character types, and a built-in strength checker.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Random</span><span>String</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> String module, list comprehension, security concepts
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="island-card reveal-up" data-delay="150">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">📝</span>
+            <div class="island-links">
+              <a href="assets/python-projects/04_quiz_game.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Quiz Game</h3>
+          <p>Interactive quiz with 10 questions across Python, HTML, C, and General Knowledge — with scoring and performance feedback.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Data Structures</span><span>Logic</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Dictionaries, lists, data modeling, user interaction
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="island-card reveal-up" data-delay="200">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">📋</span>
+            <div class="island-links">
+              <a href="assets/python-projects/05_todo_list.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>To-Do List Manager</h3>
+          <p>Full task manager with add, complete, delete, and clear features — saves tasks to a JSON file automatically.</p>
+          <div class="island-tech">
+            <span>Python</span><span>JSON</span><span>File I/O</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> JSON persistence, file handling, CRUD operations
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="island-card reveal-up" data-delay="250">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">✊</span>
+            <div class="island-links">
+              <a href="assets/python-projects/06_rock_paper_scissors.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Rock Paper Scissors</h3>
+          <p>Classic RPS game against the computer with shortcut keys, score tracking, win rate stats, and replay support.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Random</span><span>Game Logic</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Game state management, dictionaries, statistics
+          </div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="island-card reveal-up" data-delay="300">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">📊</span>
+            <div class="island-links">
+              <a href="assets/python-projects/07_word_counter.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Word Counter & Analyzer</h3>
+          <p>Analyze text for word count, character stats, top 5 words, average word length, and read from files.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Collections</span><span>File I/O</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Counter class, string methods, text processing
+          </div>
+        </article>
+
+        <!-- Project 8 -->
+        <article class="island-card reveal-up" data-delay="350">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">🎮</span>
+            <div class="island-links">
+              <a href="assets/python-projects/08_hangman.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Hangman Game</h3>
+          <p>Classic word guessing with ASCII art hangman, 4 word categories, letter tracking, and visual progress display.</p>
+          <div class="island-tech">
+            <span>Python</span><span>ASCII Art</span><span>Sets</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Sets, multi-line strings, game design patterns
+          </div>
+        </article>
+
+        <!-- Project 9 -->
+        <article class="island-card reveal-up" data-delay="400">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">🎓</span>
+            <div class="island-links">
+              <a href="assets/python-projects/09_student_grades.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Student Grade Manager</h3>
+          <p>Manage student records, auto-calculate grades, generate visual report cards, and show class rankings.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Data</span><span>Statistics</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Nested dictionaries, sorting, formatted output
+          </div>
+        </article>
+
+        <!-- Project 10 -->
+        <article class="island-card reveal-up" data-delay="450">
+          <div class="island-glow"></div>
+          <div class="island-header">
+            <span class="island-emoji">🌤️</span>
+            <div class="island-links">
+              <a href="assets/python-projects/10_weather_dashboard.py" download aria-label="Download"><i class="fas fa-download"></i></a>
+            </div>
+          </div>
+          <h3>Weather Dashboard</h3>
+          <p>Simulated weather app with 8 Indian cities, 5-day forecasts, city comparison table, and clothing suggestions.</p>
+          <div class="island-tech">
+            <span>Python</span><span>Simulation</span><span>DateTime</span>
+          </div>
+          <div class="island-learning">
+            <strong>🗺️ Discovery:</strong> Datetime module, data simulation, formatted tables
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="section-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C240,10 480,60 720,30 C960,0 1200,50 1440,25 L1440,80 L0,80 Z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== Skills Section — Beach Gear ===== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-icon">🏄</span>
+        <h2 class="section-title">Beach <span>Gear</span></h2>
+        <p class="section-subtitle">Tools & skills I carry in my beach bag</p>
+      </div>
+
+      <div class="beach-bag">
+        <div class="gear-category reveal-up">
+          <h3 class="gear-label"><i class="fas fa-palette"></i> Frontend Surf</h3>
+          <div class="surfboard-row">
+            <div class="surfboard" data-skill="75">
+              <div class="surfboard-icon"><i class="fab fa-html5"></i></div>
+              <span class="surfboard-name">HTML5</span>
+              <div class="surfboard-wave" data-width="75"></div>
+            </div>
+            <div class="surfboard" data-skill="60">
+              <div class="surfboard-icon"><i class="fab fa-css3-alt"></i></div>
+              <span class="surfboard-name">CSS3</span>
+              <div class="surfboard-wave" data-width="60"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gear-category reveal-up">
+          <h3 class="gear-label"><i class="fas fa-server"></i> Backend Depths</h3>
+          <div class="surfboard-row">
+            <div class="surfboard" data-skill="75">
+              <div class="surfboard-icon"><i class="fab fa-python"></i></div>
+              <span class="surfboard-name">Python</span>
+              <div class="surfboard-wave" data-width="75"></div>
+            </div>
+            <div class="surfboard" data-skill="70">
+              <div class="surfboard-icon"><i class="fas fa-code"></i></div>
+              <span class="surfboard-name">C Programming</span>
+              <div class="surfboard-wave" data-width="70"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gear-category reveal-up">
+          <h3 class="gear-label"><i class="fas fa-toolbox"></i> Sailor's Toolkit</h3>
+          <div class="surfboard-row">
+            <div class="surfboard" data-skill="85">
+              <div class="surfboard-icon"><i class="fas fa-brain"></i></div>
+              <span class="surfboard-name">Logical Thinking</span>
+              <div class="surfboard-wave" data-width="85"></div>
+            </div>
+            <div class="surfboard" data-skill="80">
+              <div class="surfboard-icon"><i class="fas fa-puzzle-piece"></i></div>
+              <span class="surfboard-name">Problem Solving</span>
+              <div class="surfboard-wave" data-width="80"></div>
+            </div>
+            <div class="surfboard" data-skill="78">
+              <div class="surfboard-icon"><i class="fas fa-bug"></i></div>
+              <span class="surfboard-name">Debugging</span>
+              <div class="surfboard-wave" data-width="78"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,50 C180,20 360,60 540,30 C720,0 900,50 1080,25 C1260,50 1380,20 1440,40 L1440,80 L0,80 Z" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section — Message in a Bottle ===== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-icon">🍾</span>
+        <h2 class="section-title">Send a <span>Message</span></h2>
+        <p class="section-subtitle">Drop a note in the bottle — I'll find it on shore</p>
+      </div>
+
+      <div class="bottle-grid">
+        <div class="bottle-info reveal-left">
+          <div class="bottle-visual">
+            <div class="bottle-emoji">🍾</div>
+            <div class="bottle-waves">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <h3>Let's Connect!</h3>
+          <p>Whether you have an idea, a question, or just want to say ahoy! — I'm always happy to chat.</p>
+          <div class="contact-channels">
+            <a href="mailto:priyankazalani@gmail.com" class="channel" id="contact-email">
+              <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="channel-label">Email</span>
+                <span class="channel-value">priyankazalani@gmail.com</span>
+              </div>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/priyanka-zalani-205614399/" class="channel" id="contact-linkedin">
+              <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="channel-label">LinkedIn</span>
+                <span class="channel-value">linkedin.com/in/priyanka-zalani</span>
+              </div>
+            </a>
+            <a href="#" class="channel" id="contact-github">
+              <div class="channel-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="channel-label">GitHub</span>
+                <span class="channel-value">github.com/priyanka</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="bottle-form reveal-right" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="formName" placeholder=" " required />
+            <label for="formName"><i class="fas fa-user"></i> Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="formEmail" placeholder=" " required />
+            <label for="formEmail"><i class="fas fa-at"></i> Your Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="formMessage" rows="5" placeholder=" " required></textarea>
+            <label for="formMessage"><i class="fas fa-feather"></i> Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-dive btn-full" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> <span>Cast Into The Sea</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer id="footer">
+    <div class="footer-waves">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 720,10 1080,50 C1260,70 1380,30 1440,45 L1440,0 L0,0 Z" />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="footer-content">
+        <a href="#hero" class="footer-logo">🌊 Priyanka</a>
+        <p class="footer-tagline">Frontend Developer & Ocean Explorer</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/priyanka-zalani-205614399/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:priyankazalani@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Priyanka. Made with 🌊 and ☀️ near the shore.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Easter Egg Shells -->
+  <div class="easter-shells">
+    <div class="easter-shell" data-fact="I can debug code faster than I can finish a cup of chai! ☕" style="bottom:12%;left:8%;">🐚</div>
+    <div class="easter-shell" data-fact="My first HTML page was about my favorite beach! 🏖️" style="bottom:35%;right:5%;">🐚</div>
+    <div class="easter-shell" data-fact="I once wrote a C program at 3AM and it worked first try! 🎉" style="bottom:60%;left:3%;">🐚</div>
+  </div>
+  <div class="shell-tooltip" id="shellTooltip"></div>
+
+  <!-- Footprints container -->
+  <div class="footprints-container" id="footprintsContainer"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
